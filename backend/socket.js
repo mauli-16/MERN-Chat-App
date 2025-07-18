@@ -14,12 +14,8 @@ const socketIo = (io) => {
       connectedUsers.set(socket.id, { user, room: groupId });
       //get a list of users currently in room
       const usersInRoom = Array.from(connectedUsers.values())
-        .filter((u) => {
-          u.room === groupId;
-        })
-        .map((u) => {
-          u.user;
-        });
+        .filter((u) => u.room === groupId)
+        .map((u) => u.user);
       // Emit updated users list to all clients in the room
       io.in(groupId).emit("users in room", usersInRoom);
       // Broadcast join notification to all other users in the room
@@ -53,7 +49,7 @@ const socketIo = (io) => {
     });
     //!END:New Message Handler
 
-        //!START: Disconnect Handler
+    //!START: Disconnect Handler
     //Triggered when user closes the connection
     socket.on("disconnect", () => {
       console.log(`${user?.username} disconnected`);
@@ -68,7 +64,7 @@ const socketIo = (io) => {
     });
     //!END:Disconnect Handler
 
-     //!START: Typing Indicator
+    //!START: Typing Indicator
     //Triggered when user starts typing
     socket.on("typing", ({ groupId, username }) => {
       //Broadcast typing status to other users in the room
