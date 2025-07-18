@@ -76,7 +76,7 @@ const Sidebar = ({ setSelectedGroup }) => {
       const userInfo = JSON.parse(localStorage.getItem("userInfo") || {});
       const token = userInfo.token;
       await axios.post(
-        `${apiURL}/api/groups`,
+        'http://localhost:5000/api/groups',
         {
           name: newGroupName,
           description: newGroupDescription,
