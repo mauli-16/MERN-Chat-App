@@ -25,7 +25,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await axios.post('http://localhost:5000/api/users/login', {
+      const { data } = await axios.post('https://mern-chat-app-eygf.onrender.com/api/users/login', {
         email,
         password,
       });

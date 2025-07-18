@@ -4,7 +4,7 @@ import ChatArea from "../components/ChatArea";
 import io from 'socket.io-client'
 import { useState } from "react";
 import { useEffect } from "react";
-const ENDPOINT='http://localhost:5000'
+const ENDPOINT='https://mern-chat-app-eygf.onrender.com'
 
 const Chat = () => {
   const [selectedGroup,setSelectedGroup]=useState(null)

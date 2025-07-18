@@ -27,7 +27,7 @@ const Register = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/users/register",
+        "https://mern-chat-app-eygf.onrender.com/api/users/register",
         {
           username,
           email,

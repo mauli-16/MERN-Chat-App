@@ -97,7 +97,7 @@ const ChatArea = ({selectedGroup, socket}) => {
     
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/messages/${selectedGroup?._id}`,
+        `https://mern-chat-app-eygf.onrender.com/api/messages/${selectedGroup?._id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -118,7 +118,7 @@ const ChatArea = ({selectedGroup, socket}) => {
     try {
       const token = currentUser.token;
       const { data } = await axios.post(
-        `http://localhost:5000/api/messages`,
+        'https://mern-chat-app-eygf.onrender.com/api/messages',
         {
           content: newMessage,
           groupId: selectedGroup?._id,
